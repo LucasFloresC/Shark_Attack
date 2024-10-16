@@ -3,9 +3,9 @@ En este primer proyecto trataremos de analizar el data set Shark Attacks para sa
 A modo de resumen, el archivo Shark_Attacks contiene una base de datos de los ataques de tiburones realizados a lo largo de los años y categorizado segun especies, edad, paises, personas afectadas etc.. 
 De manera que este proyecto intentara averiguar las siguientes hipotesis:
 
-**a) Correlacion entre fatalidad y edad**
+**a) Correlacion entre fatality y edad**
 
-**b) Fatalidad segun la especie implicada en el ataque** 
+**b) Fatality segun la especie implicada en el ataque** 
 
 **c) Tipo de especies segun el pais de ataque**
 
@@ -16,7 +16,7 @@ De manera que este proyecto intentara averiguar las siguientes hipotesis:
 Instalar las librerias necesarias para llevar acabo todo el trabajo de limpieza y visualización. 
 Las librerias utilizadas han sido, **Pandas**, **Numpy**, **Regex**, **Matplotlib** y **Seaborn**.
 
-Lo primero ha sido llevar a cabo un primer analisis exploratorio del data set para ver que tipo de datos contenia y como estaba organizado. Usando metodos como **head()**,**tail()**,**describe()** o **df.columns()**.
+Lo primero ha sido llevar a cabo un primer analisis exploratorio del data set para ver que tipo de datos contenia y como estaba organizado. Usando metodos como **head()**, **tail()**, **describe()** o **df.columns()**.
 Despues de este analisis exploratiorio comienza el trabajo de limpieza.
 
 # Primera limpieza del data set
@@ -35,6 +35,8 @@ Para eliminar esas filas:
 - **sharks_raw.drop(sharks_raw.index[6302:], inplace=True)**
 
 Reemplazamos el resto de NAN por el objeto "unknown". Como forma de poder categorizar esos valores nulos en caso de que mas adelante nos sean utiles. Buscamos duplicados en el data set y creamos una columna de indice unico.
+
+Por ultimo, eliminar todas aquellas columnas que no me interesaban.
  
 # Segunda limpieza del data set
 
@@ -44,7 +46,7 @@ En esta fase limpiaremos y arreglaremos los valores dentro de las columnas neces
 
 ![Datedist](Pictures\Datedist.png)
 
--**Country, Area, Location**: Arreglamos los objetos creando diccionarios y haciendo el update a traves del indice. Ademas, en el caso de los unknowns podemos suponer esos objetos gracias a las otras columnas. Por ultimo visualizamos su distribucion.
+-**Country, Area, Location**: Arreglamos los objetos creando diccionarios y haciendo el update a traves del indice. Ademas, en el caso de los unknowns podemos suponer algunos de esos objetos gracias a las otras columnas. Por ultimo visualizamos su distribucion.
 
 ![Countrydist](Pictures\Countrydist.png)
 
